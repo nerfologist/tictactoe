@@ -37,9 +37,6 @@ class Board
     up_diag = [[0, 2], [1, 1], [2, 0]]
 
     [down_diag, up_diag].map do |diag|
-      # Note the `x, y` inside the block; this unpacks, or
-      # "destructures" the argument. Read more here:
-      # http://tony.pitluga.com/2011/08/08/destructuring-with-ruby.html
       diag.map { |x, y| @rows[x][y] }
     end
   end
@@ -61,9 +58,6 @@ class Board
   end
 
   def over?
-    # style guide says to use `or`, but I (and most others) prefer to
-    # use `||` all the time. We don't like two ways to do something
-    # this simple.
     won? || tied?
   end
 
